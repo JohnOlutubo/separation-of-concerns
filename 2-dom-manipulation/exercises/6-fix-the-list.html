@@ -46,6 +46,25 @@
           debugger;
 
           // write me! (... without using cloneNode, that's kind of cheating)
+          // create a heading
+          const heading = document.createElement('h1').innerText = 'a list of things';
+
+          // Change the second item in the list
+          window.actual.children[0].children[1].innerText = 'solar systems'
+
+          // Remove the 4th item from the list
+          const item4 = window.actual.children[0].children[3];
+          window.actual.children[0].removeChild(item4);
+
+
+          // create ul
+          /* document.createElement('ul')
+          const list = [] */
+
+          // Change ul to ol
+          window.actual.children[0].tagName = 'UL'
+          
+
         </script>
       </div>
 
