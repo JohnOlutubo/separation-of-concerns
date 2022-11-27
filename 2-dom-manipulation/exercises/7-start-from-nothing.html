@@ -44,6 +44,31 @@
           debugger;
 
           // write me! (... without using cloneNode, that's kind of cheating)
+          const heading = document.createElement('h2');
+          heading.innerText = 'a list of things'
+          window.actual.append(heading);
+
+          const link = document.createElement('a');
+          link.innerText = 'learn about badgers';
+          link.href = 'https://www.badgerbadgerbadger.com';
+          link.expected = '_blank';
+          
+          const things = ['robots', 'solar systems', '', 'oil'];
+
+          const ul = document.createElement('ul');
+          things.forEach(thing => {
+            const li = document.createElement('li')
+            li.innerHTML = thing;
+            ul.append(li);
+          });
+
+          window.actual.append(ul);
+
+          // add link to third item
+          window.actual.children[1].children[2].appendChild(link);
+
+
+
         </script>
       </div>
 
