@@ -50,7 +50,18 @@
           const heading = document.createElement('h1');
           heading.innerText = 'a list of things';
 
-          
+        /* 
+          solution if I don't have to change ol
+          ============================================================
+          // Change the second item in the list
+          window.actual.children[0].children[1].innerText = 'solar systems'
+
+          // Remove the 4th item from the list
+          const item4 = window.actual.children[0].children[3];
+          window.actual.children[0].removeChild(item4);
+          ============================================================
+        */
+
           const ol = window.actual.children[0]/* .createChild('ol'); */
           
           const things = ['robots', 'solar systems', 'oil'];
@@ -63,24 +74,14 @@
             const item = document.createElement('li');
             item.innerText = thing;
             ul.append(item);
-            
-            // ul.innerHTML += `<li>${thing}</li>`; // shorter alternative
+
+           // ul.innerHTML += `<li>${thing}</li>`; // shorter alternative
           });
+        
           
           // Change ol to ul
           window.actual.removeChild(ol);
           window.actual.append(heading, ul);
-          /* 
-            solution if I don't have to change ol
-            ============================================================
-            // Change the second item in the list
-            window.actual.children[0].children[1].innerText = 'solar systems'
-  
-            // Remove the 4th item from the list
-            const item4 = window.actual.children[0].children[3];
-            window.actual.children[0].removeChild(item4);
-            ============================================================
-          */
         </script>
       </div>
 
